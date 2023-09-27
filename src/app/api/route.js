@@ -5,7 +5,7 @@ export const config = {
     runtime: "edge",
 };
 
-export default async function handler(req, res) {
+export async function POST(req, res) {
     try {
         const { inputLanguage, outputLanguage, inputCode } = await req.json();
         const stream = await OpenAIStream(
